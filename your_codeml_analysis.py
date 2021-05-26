@@ -18,7 +18,7 @@ def parse_args():   #### for all the arguments the user is goin to provide
 
     parser.add_argument("--input-fasta", default="/dev/stdin")
     parser.add_argument("--output-phy", default="/dev/stdout")
-    parser.add_argument("--gene_list", type = list )
+    parser.add_argument("--gene")
 
     return parser.parse_args()
 
@@ -233,7 +233,7 @@ for af in all_files :
         os.system("codeml")
         write_codeml("codeml.ctl", af ,"hg38H2.nh", "{}_res2_allbranches.res".format(af[0:-4]), 2 )
         os.system("codeml") 
-        write_codeml("codeml.ctl", af ,"hg38.H3.nh", "{}_res2hg.res".format(af[0:-4]), 0 )
+        write_codeml("codeml.ctl", af ,"hg38.H3.nh", "{}_res2hg.res".format(af[0:-4]), 2 )
         os.system("codeml")
 
 
